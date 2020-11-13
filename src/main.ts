@@ -2,5 +2,19 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import antd from './plugins/antd'
+import axios from './plugins/axios'
+import moment from 'moment'
+moment.locale('zh-cn')
 
-createApp(App).use(store).use(router).mount('#app')
+const app = createApp(App)
+app.config.globalProperties.$moment = moment
+
+// axios.defaults.baseURL = '/api';
+
+app
+  .use(axios)
+  .use(antd)
+  .use(router)
+  .use(store)
+  .mount('#app')
