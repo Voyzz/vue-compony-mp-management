@@ -56,7 +56,7 @@ export default {
     // 请求拦截器
     _axios.interceptors.request.use(
       conf => {
-        const token = '5b6deea38acf451f88519660f36fea58'
+        // const token = '5b6deea38acf451f88519660f36fea58'
         // 从vuex里获取token
         // const token = store.state.token
         // 如果token存在就在请求头里添加
